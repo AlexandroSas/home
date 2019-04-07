@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Alexandro Sas">
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Marck+Script|Poiret+One" rel="stylesheet">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="heroimg">
+        <nav>
+            <div class="menu" aria-hidden="true"><p>Menu</p><i class="fa fa-bars"></i></div>    
+                <ul class="top">
+                    <li id="img"><img src="images/sign.png" width="240px"></li>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="gallery.html">GALLERY</a></li>
+                    <li><a href="#AbMe">ABOUT ME</a></li>
+                    <li><a href="contact.html">RIPETIZIONI</a></li>
+                </ul>
+            <div class="hid">
+                <p>WebSite made by Alexandro Sas</p>
+                <ul class="social">
+                    <li><a href="https://twitter.com/alexandro_sas" id="twitter" target="_blank"><i class="fa fa-twitter" title="Twitter"></i></a></li>
+                    <li><a href="https://t.me/joinchat/AAAAAFINPQ-BapurTMIGYQ" id="telegram" target="_blank"><i class="fa fa-telegram" title="Telegram"></i></a></li>
+                    <li><a href="https://www.instagram.com/alexandro.sas/?hl=it" id="instagram" target="_blank"><i class="fa fa-instagram" title="Instagram"></i></a></li>
+                    <li><a href="https://plus.google.com/u/0/118151803143970824809" id="googlep" target="_blank"><i class="fa fa-google-plus-official" title="Google+"></i></a></li>
+                    <li><a href="https://www.youtube.com/channel/UCFz_mZXOTDt9hBtlzXCSluA" id="youtube" target="_blank"><i class="fa fa-youtube-play" title="YouTube"></i></a></li>
+                    <li><a href="https://www.facebook.com/alexandro.sass" id="facebook" target="_blank"><i class="fa fa-facebook-square" title="FaceBook"></i></a></li>  
+                </ul>
+            </div>
+        </nav>
+
+        <div class="herotxt mbtxt">
+            <h1>Hi, I'm Alexandro Sas</h1>
+            <p>And I'm a computer science student.</p>
+            <i class="fa fa-angle-left"></i>
+            <i class="fa fa-angle-right"></i>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('.menu').click(function(){
+                    $('ul.top').toggleClass('active2');
+                    $('div.hid').toggleClass('active');
+                    $('div.mbtxt').toggleClass('herotxt');
+                    $('div.mbtxt').toggleClass('off');
+                })
+            })                        
+        </script>
+    </div>
+    <div class="container" id="AbMe">
+        <h1>About Me</h1>
+        <p>I'm Alexandro Sas and I was born in 1998.
+I attended the musical class of the "Antonio Gramsci" middle school in Aprilia, where i learned how to play the piano. 
+I graduated with 100/100 at "Antonio Meucci" high school in Aprilia (2016-2017). 
+Now I'm studying computer science engeenering at the "Sapienza Università di Roma", Latina headquarter. 
+I participated with my class in two videomaking competitons made by my high school and i've been rewarded both times. 
+I participated in an acting workshop with Alessandro Borghi. 
+I have practiced different sports like: Latin American dances, swimming, 5-a-side football, and football. 
+I have lots of passions: photography, drawing, music. 
+I'm a self-taught photographer and I inherited the love for drawing by my dad. 
+I know pretty well the 2d and 3d graphic programs(ex. Blender, Illustrator), the photo and video editing (ex. Photoshop, Premiere, Lightroom), the musical production (ex. Cubase, Musescore).
+        </p>
+    </div>
+    <div class="container">
+        <h1>Gallery Preview</h1>
+        <div class="gallery">
+            <p>ATTENZIONE <span><i class="fa fa-warning"></i></span> : Al momento la gallery non è disponibile, è ancora in fase di sviluppo. Ci scusiamo per il disagio.</p>
+
+        </div>
+    </div>
+    
+    <nav class="footbar">
+        <div></div>
+        <p>WebSite made by Alexandro Sas</p>
+        <a href="index.html">GO UP <i class="fa fa-home"></i></a>
+    </nav>
+</body>
+</html>

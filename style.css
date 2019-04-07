@@ -1,0 +1,292 @@
+html,body{
+    color:white;
+    margin:0;
+    height: 100%;
+    background: #ccc;
+    font-family: 'Marck Script', cursive; /*corsivo*/
+    /*font-family: 'Poiret One', cursive;/*stampatello*/
+}
+.heroimg{
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    background: linear-gradient(rgba(0, 25,25, 0.4) 20%,rgba(0,0,0,0) 70%,rgba(0,0,25, 0.6) 100%), url(images/bg.jpg) no-repeat center;
+    background-size: cover;
+}
+.herotxt{
+    padding:50px 0px;
+    display: block;
+    position: relative;
+    text-align: center;
+    font-size:300%;
+}
+
+/*---INVISIBLE---*/
+.hid{
+    display: none;
+    text-align: center;
+}
+.menu{
+    display: none;
+}
+
+
+/*---HEADER---*/
+nav{
+    height: 100px;
+	position:relative;
+	background: rgba(255, 255, 255, 0.2);
+}
+ul{
+	padding:0;
+	list-style: none;
+	display: grid; 
+	grid-template-columns: 15% auto auto auto auto;
+	margin:0;
+}
+ul li{
+    margin-top: 20px;
+	padding: 10px;
+	position: relative;
+	text-align: center;
+}
+ul li a{
+    color:white;
+    border-left: 4px solid white;
+	padding:5px 10px;
+	text-decoration: none;
+    font-family:'Poiret One', cursive;
+    font-weight: bold;
+	font-size: 30px;
+	color:rgba(255,255,255,0.9);
+}
+img{
+    width:200px;
+}
+#img{
+    margin: 0;
+    padding: 0;
+}
+
+/*CONTENUTI*/
+/*about me*/
+.container{
+    font-size: 250%;
+    text-align: left;
+    margin: 10px auto;
+    padding: 30px;
+    background: #333;
+}
+.container p{
+    font-family: 'Merriweather', serif;
+    width:80%;
+    margin:0 auto;
+}
+.container h1{
+    font-family: 'Poiret One', cursive;
+    text-align: center;
+}
+/*gallery*/
+/*credits*/
+nav.footbar{
+    height: 50px;
+    font-size:20px;
+    font-family:'Poiret One', cursive; 
+    margin:0;
+    background: #000;
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    text-align: center;
+}
+.footbar a, .footbar p{
+    padding: 0;
+    margin: 10px auto;
+}
+.footbar a{
+    text-decoration: none;
+    color: white;
+}
+/*FUNCTIONS*/
+.active{
+	display: block;
+}
+.active2{
+    display: grid;
+}
+.off{
+    display: none;
+}
+
+/*MEDIA QUERIES*/
+/*smartphone*/
+@media(max-width:425px){
+    nav{
+        height: 60px;
+    }
+    .heroimg{
+        background-position-x: -50px;
+    }
+    /*header*/
+    .menu{
+        text-align: center;
+        font-size: 40px;
+        display: block;
+        height: 60px;
+    }
+    .menu i{
+        padding: 10px 0px;
+    }
+    .menu i, .menu p{
+        display: inline-block;
+    }
+    .menu p{
+        margin-top: 5px;
+        margin-right: 15px;
+    }
+    .menu i{
+        font-size: 50%;
+    }
+    ul{
+        display: none;
+        background: rgba(255,255,255,0.2);
+        grid-template-columns: auto;
+        padding-bottom: 10px;
+        border-bottom: 2px solid white;
+    }
+    ul li{
+        background: rgba(0,0,0,0.5);
+        padding: 10px;
+        margin: 5px;
+        border: 2px solid white;
+    }
+    #img{
+        border-left:none;
+        border-right: none;
+        margin-top: 0;
+        margin-bottom: 15px;
+        margin-right: 0px;
+        margin-left: 0px;
+        padding: 0;
+        background: rgba(0,0,0,0.5);
+    }
+    ul li a{
+        font-size: 20px;
+        border: none;
+    }
+    div.hid{
+        background: rgba(0,0,0,0.5);
+    }
+    div.hid p{
+        padding-top: 15px;
+        margin-top: 0;
+        margin-bottom: 5px;
+        font-size: 20px;
+    }
+    ul.social{
+        background: none;
+        padding:0;
+        margin:0 auto;
+        display: grid;
+        grid-template-columns: auto auto auto auto auto auto;
+    }
+    ul.social li{
+        border: none;
+        background: none;
+        margin:0;
+        padding:10px;
+    }
+    ul.social li a{
+        font-size: 100%;
+    }
+
+
+    .herotxt{
+        width:80%;
+        margin: 0 auto;
+        padding:50px 0px;
+        display: block;
+        position: relative;
+        text-align: center;
+        font-size:100%;
+    }
+
+    /*contenuti*/
+    .container{
+        font-size: 100%;
+        text-align: left;
+        margin: 10px auto;
+        padding: 30px;
+        background: #333;
+    }
+    .container p{
+        font-family: 'Merriweather', serif;
+        width:80%;
+        margin:0 auto;
+    }
+    .container h1{
+        font-family: 'Poiret One', cursive;
+        text-align: center;
+    }
+    /*footer*/
+    nav.footbar{
+        height: 35px;
+        font-size:10px;
+        font-family:'Poiret One', cursive; 
+        margin:0;
+        background: #000;
+        display: grid;
+        grid-template-columns: 25% 50% 25%;
+        text-align: center;
+    }
+    .footbar a, .footbar p{
+        padding: 0;
+        margin: 10px auto;
+    }
+    .footbar a{
+        text-decoration: none;
+        color: white;
+    }
+}
+/*tablet*/
+@media(min-width: 426px) and (max-width:768px){
+    .hid{
+        display: none;
+    }
+    ul{
+        padding:0;
+        list-style: none;
+        display: grid; 
+        grid-template-columns: 20% auto auto auto auto;
+        margin:0;
+    }
+    ul li{
+        margin-top: 30px;
+        padding: 10px;
+        position: relative;
+        text-align: center;
+    }
+    ul li a{
+        color:white;
+        border-left: 4px solid white;
+        padding:5px 10px;
+        text-decoration: none;
+        font-family:'Poiret One', cursive;
+        font-weight: bold;
+        font-size: 20px;
+        color:rgba(255,255,255,0.9);
+    }
+    img{
+        margin-left: 10px;
+        margin-top: 10px;
+        width:150px;
+    }
+
+    .herotxt{
+        margin-top: 0px;
+        padding:50px 0px;
+        display: block;
+        position: relative;
+        text-align: center;
+        font-size:200%;
+    }
+}
