@@ -1,0 +1,272 @@
+html{
+    scroll-behavior: smooth;
+}
+.aboutme{
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 60px;
+}
+.aboutme h1{
+    font-size: 50px;
+    margin-top: 60px;
+}
+.line{
+    margin:50px auto;
+    width: 90vw;
+    height: 3px;
+    background: #000;
+}
+
+.gallerybody{
+    font-size: 125%;
+    height: 100vh;
+    text-align: center;
+    margin: 0 auto;
+    width:50vw;
+    display: flex;
+    flex-wrap: wrap;
+}
+.gallerybody h1{
+    width: 100vw;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+.gallery{
+    flex: 1 1 60%;
+    height: 80vh;
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+}
+
+/*Elementi Galleria*/
+.pitem{
+    color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.large{
+    grid-column: span 3;
+    grid-row: span 3;
+}
+.medium{
+    grid-column: span 2;
+    grid-row: span 2;
+}
+.small{
+    grid-column: span 1;
+    grid-row: span 1;
+}
+.tall{
+    grid-column: span 2;
+    grid-row: span 3;
+}
+.wide{
+    grid-column: span 3;
+    grid-row: span 2;
+}
+.pitem:hover{
+    text-align: center;
+    font-size: 175%;
+    color:white;
+    font-family:  'Tangerine', cursive;
+}
+.one{
+    background: url(./images/moto2.jpg) no-repeat center;
+    background-size: cover;
+}
+.one:hover{
+    background: linear-gradient(rgba(0,0,0,0.6)10%,rgba(0,0,0,0.6) 100%),url(./images/moto2.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.two{
+    background: url(./images/moto5.jpg) no-repeat center;
+    background-size: cover;
+}
+.two:hover{
+    background: linear-gradient(rgba(0,0,0,0.6)10%,rgba(0,0,0,0.6) 100%),url(./images/moto5.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.three{
+    background: url(./images/moto1.jpg) no-repeat center;
+    background-size: cover;
+}
+.three:hover{
+    background: linear-gradient(rgba(0,0,0,0.6)10%,rgba(0,0,0,0.6) 100%),url(./images/moto1.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.four{
+    background: url(./images/moto3.jpg) no-repeat center;
+    background-size: cover;
+}
+.four:hover{
+    background: linear-gradient(rgba(0,0,0,0.6)10%,rgba(0,0,0,0.6) 100%),url(./images/moto3.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.five{
+    background: url(./images/keylarge.jpg) no-repeat center;
+    background-size: cover;
+    background-position-y:-45px; 
+}
+.five:hover{
+    background: linear-gradient(rgba(0,0,0,0.6)10%,rgba(0,0,0,0.6) 100%),url(./images/keylarge.jpg) no-repeat center;
+    background-size: cover;
+    background-position-y:-45px; 
+}
+
+.six{
+    background: url(./images/closeup.jpg) no-repeat center;
+    background-size: cover;
+    background-position: top;
+}
+.six:hover{
+    background: linear-gradient(rgba(0,0,0,0.6)10%,rgba(0,0,0,0.6) 100%),url(./images/closeup.jpg) no-repeat center;
+    background-size: cover;
+    background-position: top;
+}
+#bcktop{
+    position: absolute;
+    bottom: 40px;
+    right:40px;
+    font-size: 26px;
+    width:50px;
+    height: 50px;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    transition-property: background-color, color;
+    z-index: 2;
+}
+#bcktop:hover, #bcktop:focus{
+    background-color: rgba(255,255,255,0.2);
+}
+
+/* .btnEntrance{
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-name: btnEntrance;
+}
+@keyframes btnEntrance{
+    from{
+        opacity: 0;
+        transform: scale3d(0.3,0.3,0.3);
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.btnExit{
+    animation-duration: 0.25s;
+    animation-fill-mode: both;
+    animation-name: btnExit;
+}
+@keyframes btnEntrance{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+        transform: scale3d(0.3,0.3,0.3);
+    }
+} */
+
+@media(max-width: 425px){
+    #bcktop{      
+        bottom: 30px;
+        right: 10px;
+        left: 10px;
+        margin:0 auto;
+        font-size: 16px;
+        width:40px;
+        height: 40px;
+        border: 2px solid #fff;
+        border-radius: 50%;
+    }
+
+    .one:hover{
+        background:url(./images/moto2.jpg) no-repeat center;
+        background-size: cover;
+    }
+    .two:hover{
+        background:url(./images/moto5.jpg) no-repeat center;
+        background-size: cover;
+    }
+    .three:hover{
+        background:url(./images/moto1.jpg) no-repeat center;
+        background-size: cover;
+    }
+    .four:hover{
+        background:url(./images/moto3.jpg) no-repeat center;
+        background-size: cover;
+    }
+    .five:hover{
+        background:url(./images/keylarge.jpg) no-repeat center;
+        background-size: cover;
+    }
+    .six:hover{
+        background:url(./images/closeup.jpg) no-repeat center;
+        background-size: cover;
+    }
+    .pitem:hover{
+        text-align: center;
+        font-size: 0%;
+        color:transparent;
+        font-family:  'Tangerine', cursive;
+        grid-row: span 3;
+    }
+    .gallerybody{
+        width: 100%;
+        margin-bottom: 2px;
+    }
+    
+    .gallerybody h1{
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .gallery{
+        padding: 0%;
+        grid-template-rows: repeat(8, 1fr);
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 2px;
+    }
+    .large{
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    .medium{
+        grid-column: span 1;
+        grid-row: span 1;
+    }   
+    .small{
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    .tall{
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    .wide{
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    footer{
+        display: none;
+    }
+    .secondline{
+        display: none;
+    }
+      
+}

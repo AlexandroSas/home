@@ -1,292 +1,309 @@
-html,body{
-    color:white;
-    margin:0;
-    height: 100%;
-    background: #ccc;
-    font-family: 'Marck Script', cursive; /*corsivo*/
-    /*font-family: 'Poiret One', cursive;/*stampatello*/
-}
-.heroimg{
-    position: relative;
-    height: 100%;
-    overflow: hidden;
-    background: linear-gradient(rgba(0, 25,25, 0.4) 20%,rgba(0,0,0,0) 70%,rgba(0,0,25, 0.6) 100%), url(images/bg.jpg) no-repeat center;
-    background-size: cover;
-}
-.herotxt{
-    padding:50px 0px;
-    display: block;
-    position: relative;
-    text-align: center;
-    font-size:300%;
-}
-
-/*---INVISIBLE---*/
-.hid{
-    display: none;
-    text-align: center;
-}
-.menu{
-    display: none;
-}
-
-
-/*---HEADER---*/
-nav{
-    height: 100px;
-	position:relative;
-	background: rgba(255, 255, 255, 0.2);
-}
-ul{
-	padding:0;
-	list-style: none;
-	display: grid; 
-	grid-template-columns: 15% auto auto auto auto;
-	margin:0;
-}
-ul li{
-    margin-top: 20px;
-	padding: 10px;
-	position: relative;
-	text-align: center;
-}
-ul li a{
-    color:white;
-    border-left: 4px solid white;
-	padding:5px 10px;
-	text-decoration: none;
-    font-family:'Poiret One', cursive;
-    font-weight: bold;
-	font-size: 30px;
-	color:rgba(255,255,255,0.9);
-}
-img{
-    width:200px;
-}
-#img{
+* {
     margin: 0;
     padding: 0;
 }
 
-/*CONTENUTI*/
-/*about me*/
-.container{
-    font-size: 250%;
-    text-align: left;
-    margin: 10px auto;
-    padding: 30px;
-    background: #333;
+body{
+    font-family: 'Josefin Sans', sans-serif;
 }
-.container p{
-    font-family: 'Merriweather', serif;
-    width:80%;
-    margin:0 auto;
+
+.heroimage{
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    background: url(./images/homebg.jpg) no-repeat center;
+    background-size: cover;
+    background-attachment: fixed; /*Parallax effects*/
+}
+div{
+    display: block;
+}
+.container{
+    float: right;
+    width: 50%;
+    padding:10px;
 }
 .container h1{
-    font-family: 'Poiret One', cursive;
+    font-family: 'Tangerine', cursive;
+    margin-top: 15%;
+    font-size: 100px;
+    font-weight: normal;
+    padding: 10px;
+    color: white;
+}
+.container h4{
+    padding: 10px 0px 10px 10px;     /*top right bottom left*/
+    color: white;
+}
+.container p{
+    color: white;
+    padding: 0px 10px 0px 10px;
+}
+
+.container ul.links{
+    list-style-type: none;
+    width: 100%;
+    padding: 10px 0px 0px 0px;
+    margin-top: 1%;
+    margin-bottom: 2%;
+
+}
+
+.container ul.links li{
+    border: 2px solid white;
+    border-radius: 3px;
     text-align: center;
+    width: 300px;
+    margin: 1%;
+
 }
-/*gallery*/
-/*credits*/
-nav.footbar{
-    height: 50px;
-    font-size:20px;
-    font-family:'Poiret One', cursive; 
-    margin:0;
-    background: #000;
-    display: grid;
-    grid-template-columns: 30% 40% 30%;
-    text-align: center;
+
+.container ul.links li a{
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 10px 0px 10px 0px;
 }
-.footbar a, .footbar p{
-    padding: 0;
-    margin: 10px auto;
+
+.container ul.links li a:hover{
+    background: rgba(255, 255, 255, 0.3);
 }
-.footbar a{
+
+a{
     text-decoration: none;
     color: white;
 }
-/*FUNCTIONS*/
-.active{
-	display: block;
-}
-.active2{
-    display: grid;
-}
-.off{
-    display: none;
+
+.container ul.social{
+    list-style-type: none;
+    margin-bottom: 10%;
 }
 
-/*MEDIA QUERIES*/
-/*smartphone*/
-@media(max-width:425px){
-    nav{
-        height: 60px;
-    }
-    .heroimg{
-        background-position-x: -50px;
-    }
-    /*header*/
-    .menu{
-        text-align: center;
-        font-size: 40px;
-        display: block;
-        height: 60px;
-    }
-    .menu i{
-        padding: 10px 0px;
-    }
-    .menu i, .menu p{
-        display: inline-block;
-    }
-    .menu p{
-        margin-top: 5px;
-        margin-right: 15px;
-    }
-    .menu i{
-        font-size: 50%;
-    }
-    ul{
-        display: none;
-        background: rgba(255,255,255,0.2);
-        grid-template-columns: auto;
-        padding-bottom: 10px;
-        border-bottom: 2px solid white;
-    }
-    ul li{
-        background: rgba(0,0,0,0.5);
-        padding: 10px;
-        margin: 5px;
-        border: 2px solid white;
-    }
-    #img{
-        border-left:none;
-        border-right: none;
-        margin-top: 0;
-        margin-bottom: 15px;
-        margin-right: 0px;
-        margin-left: 0px;
-        padding: 0;
-        background: rgba(0,0,0,0.5);
-    }
-    ul li a{
-        font-size: 20px;
-        border: none;
-    }
-    div.hid{
-        background: rgba(0,0,0,0.5);
-    }
-    div.hid p{
-        padding-top: 15px;
-        margin-top: 0;
-        margin-bottom: 5px;
-        font-size: 20px;
-    }
-    ul.social{
-        background: none;
-        padding:0;
-        margin:0 auto;
-        display: grid;
-        grid-template-columns: auto auto auto auto auto auto;
-    }
-    ul.social li{
-        border: none;
-        background: none;
-        margin:0;
-        padding:10px;
-    }
-    ul.social li a{
-        font-size: 100%;
-    }
+.container ul.social li{
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+    font-size: 120%;
+}
 
+.container ul.social li a:hover{
+    color:rgba(255, 255, 255, 0.75);
+}
 
-    .herotxt{
-        width:80%;
-        margin: 0 auto;
-        padding:50px 0px;
-        display: block;
-        position: relative;
-        text-align: center;
-        font-size:100%;
-    }
-
-    /*contenuti*/
+@media(max-width: 320px){
+    .heroimage{
+        background: linear-gradient(rgba(0,0,0,0.3) 5%,rgba(0,0,0,0.8) 80%,rgba(0,0,0, 0.3) 100%), url(images/coldBack.jpg) no-repeat center;
+        background-size: cover;
+        background-attachment: fixed;
+    }    
     .container{
-        font-size: 100%;
-        text-align: left;
-        margin: 10px auto;
-        padding: 30px;
-        background: #333;
-    }
-    .container p{
-        font-family: 'Merriweather', serif;
-        width:80%;
-        margin:0 auto;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        width: 90vw;
+        padding: 10px;
     }
     .container h1{
-        font-family: 'Poiret One', cursive;
+        font-family: 'Tangerine', cursive;
+        margin-top: 15%;
+        font-size: 50px;
+        font-weight: normal;
+        padding: 10px;
+        color: white;
+    }
+    .container ul.links{
+        list-style-type: none;
+        width: 70%;
+        padding: 10px 0px 0px 0px;
+        margin-top: 5%;
+        margin-bottom: 2%;
+    
+    }
+    
+    .container ul.links li{
+        border: 2px solid white;
+        border-radius: 3px;
         text-align: center;
+        width: 150px;
+        margin: 1%;
+    
     }
-    /*footer*/
-    nav.footbar{
-        height: 35px;
-        font-size:10px;
-        font-family:'Poiret One', cursive; 
-        margin:0;
-        background: #000;
-        display: grid;
-        grid-template-columns: 25% 50% 25%;
-        text-align: center;
+    
+    .container ul.links li a{
+        background:rgba(255, 255, 255, 0.1);
+        display: block;
+        width: 100%;
+        margin: 0;
+        padding: 10px 0px 10px 0px;
     }
-    .footbar a, .footbar p{
-        padding: 0;
-        margin: 10px auto;
+    
+    .container ul.links li a:hover{
+        background: rgba(255, 255, 255, 0.3);
     }
-    .footbar a{
+    
+    a{
         text-decoration: none;
         color: white;
     }
-}
-/*tablet*/
-@media(min-width: 426px) and (max-width:768px){
-    .hid{
-        display: none;
+    
+    .container ul.social{
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        list-style-type: none;
+        margin-top: 10%;
+        margin-bottom: 10%;
     }
-    ul{
-        padding:0;
-        list-style: none;
-        display: grid; 
-        grid-template-columns: 20% auto auto auto auto;
-        margin:0;
-    }
-    ul li{
-        margin-top: 30px;
-        padding: 10px;
-        position: relative;
+    
+    .container ul.social li{
+        display: inline-block;
         text-align: center;
+        padding: 10px;
+        font-size: 120%;
     }
-    ul li a{
-        color:white;
-        border-left: 4px solid white;
-        padding:5px 10px;
+}
+@media(min-width:321px) and (max-width: 425px){
+    .heroimage{
+        background: linear-gradient(rgba(0,0,0,0.3) 5%,rgba(0,0,0,0.8) 80%,rgba(0,0,0, 0.3) 100%), url(images/keycut.jpg) no-repeat center;
+        background-size: cover;
+        background-attachment: fixed;
+    }    
+    .container{
+        margin-left: auto;
+        margin-right: auto;
+        float: none;
+        width: 90vw;
+        padding: 10px;
+    }
+    .container h1{
+        font-family: 'Tangerine', cursive;
+        margin-top: 15%;
+        font-size: 50px;
+        font-weight: normal;
+        padding: 10px;
+        color: white;
+    }
+    .container ul.links{
+        list-style-type: none;
+        width: 70%;
+        padding: 10px 0px 0px 0px;
+        margin-top: 5%;
+        margin-bottom: 2%;
+    
+    }
+    
+    .container ul.links li{
+        border: 2px solid white;
+        border-radius: 3px;
+        text-align: center;
+        width: 150px;
+        margin: 1%;
+    
+    }
+    
+    .container ul.links li a{
+        background:rgba(255, 255, 255, 0.1);
+        display: block;
+        width: 100%;
+        margin: 0;
+        padding: 10px 0px 10px 0px;
+    }
+    
+    .container ul.links li a:hover{
+        background: rgba(255, 255, 255, 0.3);
+    }
+    
+    a{
         text-decoration: none;
-        font-family:'Poiret One', cursive;
-        font-weight: bold;
-        font-size: 20px;
-        color:rgba(255,255,255,0.9);
+        color: white;
     }
-    img{
-        margin-left: 10px;
-        margin-top: 10px;
-        width:150px;
+    
+    .container ul.social{
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        list-style-type: none;
+        margin-top: 10%;
+        margin-bottom: 10%;
+    }
+    
+    .container ul.social li{
+        display: inline-block;
+        text-align: center;
+        padding: 10px;
+        font-size: 120%;
+    }
+}
+@media(min-width:426px) and (max-width: 768px){
+    .heroimage{
+        background: linear-gradient(rgba(0,0,0,0.3) 5%,rgba(0,0,0,0.8) 80%,rgba(0,0,0, 0.3) 100%), url(images/coldBack.jpg) no-repeat center;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position-y: -35px;
+        background-position-x: 0px;
+    }    
+    .container{
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+        padding: 10px;
+    }
+    .container h1{
+        text-align: center;
+        font-family: 'Tangerine', cursive;
+        margin-top: 15%;
+        font-size: 100px;
+        font-weight: normal;
+        padding: 10px;
+        color: white;
+    }
+    .container ul.links{
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        list-style-type: none;
+        padding: 10px 0px 0px 0px;
+        margin-top: 5%;
+    
+    }
+    
+    .container ul.links li{
+        border: 2px solid white;
+        border-radius: 3px;
+        text-align: center;
+        width: 150px;
+        margin: 1%;
+    
+    }
+    
+    .container ul.links li a{
+        background:rgba(255, 255, 255, 0.1);
+        display: block;
+        width: 100%;
+        margin: 0;
+        padding: 10px 0px 10px 0px;
+    }
+    
+    .container ul.links li a:hover{
+        background: rgba(255, 255, 255, 0.3);
+    }
+    
+    a{
+        text-decoration: none;
+        color: white;
+    }
+    
+    .container ul.social{
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        list-style-type: none;
+        margin-top: 5%;
+        margin-bottom: 10%;
+    }
+    
+    .container ul.social li{
+        display: inline-block;
+        text-align: center;
+        padding: 10px 0px 14px 0px;
+        font-size: 120%;
     }
 
-    .herotxt{
-        margin-top: 0px;
-        padding:50px 0px;
-        display: block;
-        position: relative;
-        text-align: center;
-        font-size:200%;
-    }
 }
