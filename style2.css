@@ -1,6 +1,9 @@
 html{
     scroll-behavior: smooth;
 }
+.header{
+    display: none;
+}
 .aboutme{
     text-align: center;
     padding: 10px;
@@ -194,73 +197,15 @@ html{
         border: 2px solid #fff;
         border-radius: 50%;
     }
-
-    .one:hover{
-        background:url(./images/moto2.jpg) no-repeat center;
-        background-size: cover;
-    }
-    .two:hover{
-        background:url(./images/moto5.jpg) no-repeat center;
-        background-size: cover;
-    }
-    .three:hover{
-        background:url(./images/moto1.jpg) no-repeat center;
-        background-size: cover;
-    }
-    .four:hover{
-        background:url(./images/moto3.jpg) no-repeat center;
-        background-size: cover;
-    }
-    .five:hover{
-        background:url(./images/keylarge.jpg) no-repeat center;
-        background-size: cover;
-    }
-    .six:hover{
-        background:url(./images/closeup.jpg) no-repeat center;
-        background-size: cover;
-    }
-    .pitem:hover{
-        text-align: center;
-        font-size: 0%;
-        color:transparent;
-        font-family:  'Tangerine', cursive;
-        grid-row: span 3;
+    .gallery{
+        display: none;
     }
     .gallerybody{
-        width: 100%;
-        margin-bottom: 2px;
+        width: 100vw;
+        height: auto;
     }
-    
     .gallerybody h1{
-        margin-top: 30px;
-        margin-bottom: 30px;
-    }
-    .gallery{
-        padding: 0%;
-        grid-template-rows: repeat(8, 1fr);
-        grid-template-columns: repeat(1, 1fr);
-        grid-gap: 2px;
-    }
-    .large{
-        grid-column: span 1;
-        grid-row: span 1;
-    }
-    .medium{
-        grid-column: span 1;
-        grid-row: span 1;
-    }   
-    .small{
-        grid-column: span 1;
-        grid-row: span 1;
-    }
-    .tall{
-        grid-column: span 1;
-        grid-row: span 1;
-    }
-
-    .wide{
-        grid-column: span 1;
-        grid-row: span 1;
+        margin-bottom: 5vh;
     }
     footer{
         display: none;
@@ -268,5 +213,29 @@ html{
     .secondline{
         display: none;
     }
+
+    .header{
+        font-size: 0;
+        display: -ms-flexbox;
+        -ms-flex-wrap: wrap;
+        -ms-flexbox-direction: column;
+        -webkit-flex-flow: row wrap;
+        flex-flow: row wrap;
+        display: -webkit-box;
+        display: flex;
+    }
+    
+    .header div{
+        margin-bottom: 1vw;
+        -webkit-box-flex: auto;
+        -ms-flex: auto;
+        flex: auto;
+    }
+    
+    .header div img{
+        width: 100%;
+        height: auto;
+    }
+    
       
 }
