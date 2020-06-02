@@ -4,9 +4,9 @@ const constraints = {
         //width: { min: 640, ideal: 1920 },
         //height: { min: 400, ideal: 1080 },
         //aspectRatio: { ideal: 1.7777777778 }
-        width: window.screen.availWidth,
+        width: window.innerWidth,
         height: window.screen.availHeight,
-        facingMode: "user" // {exact: "environmet"} for external webcam
+        facingMode: /*"user"*/  {exact: "environmet"} for external webcam
     }
 };
 document.addEventListener("DOMContentLoaded",init);
