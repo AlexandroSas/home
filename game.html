@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game in JS</title>
     <style>
-        *{padding: 0; margin:0;}
-        canvas{ background: #eee; display: block; margin: 0 auto;}
+        *{padding: 0; margin:0; text-align: center;}
+        canvas{ background: #eee; display: block; margin: 30px auto;}
+        h1{color: #0095dd; padding: 10px; margin: 30px auto 0px auto;}
     </style>
 </head>
 <body>
+    <h1>Bugged Arkanoid</h1>
+    <p>Hit the space bar to start! Enjoy :D</p>
     <canvas id="cnvs" width="500" height="350px"></canvas>
     <script>
         var canvas = document.getElementById("cnvs");
@@ -17,8 +20,8 @@
         const border = 10;
 
         // Ball Variables
-        var x = canvas.width/2;     var dx = Math.floor(Math.random()*(3-2+1))+2; // max = 3, min = 2
-        var y = canvas.height - 30;   var dy = Math.floor(Math.random()*(3-2+1))+2;
+        var x = canvas.width/2;         var dx = 0;
+        var y = canvas.height - 30;     var dy = 0;
         const ballRadius = 10;
 
         // Paddle Variables
@@ -50,6 +53,8 @@
 
         // Score
         var score = 0;
+        var start = false;
+        var gameStarted = false;
 
 
         document.addEventListener("keydown",keyDownHandler,false);
@@ -99,6 +104,10 @@
             } else if(e.key == "Left" || e.key == "ArrowLeft"){
                 leftPressed = true;
             }
+            
+            if(e.keyCode == 32){
+                start = true;
+            }
         }
         function keyUpHandler(e){
             if(e.key == "Right" || e.key == "ArrowRight"){
@@ -136,7 +145,13 @@
             drawPaddle();
             collisionDetection();
             drawScore();
-
+                                
+            // Starting Game
+            if(start && !gameStarted){
+                gameStarted = true;
+                dx = Math.floor(Math.random(3-2-1))+2;      // max = 3, min = 2
+                dy = Math.floor(Math.random(3-2-1))+2;         
+            }
             // Key Event
             if(rightPressed){
                 paddleX += 7;
