@@ -23,6 +23,7 @@
                 this.dy;
             };
         }
+        var framerate = 500;
         var canvas = document.getElementById("cnvs");
         var ctx = canvas.getContext("2d");
 
@@ -126,6 +127,12 @@
                 foodY = Math.floor(Math.random()*50)*10 + 50;
                 score += 10;
 
+                // Update Framerate
+                framerate -= 10;
+                clearInterval(interval);
+                interval = setInterval(draw,framerate);
+
+
                 // Incrementing the size of the tales
                 var t = new Tale();
                 t.x = tales[0].x;
@@ -134,7 +141,7 @@
                 t.dy = tales[0].dy;
                 tales.push(t);
             }
-            /*
+            /* 
             for(var i=0; i<brickColumnCount; i++){
                 for(var j=0; j<brickRowCount; j++){
                     var b = bricks[i][j];
@@ -259,8 +266,9 @@
             // Update Snake Movement
             tales[0].x += tales[0].dx;
             tales[0].y += tales[0].dy;
+
         }
-        var interval = setInterval(draw,500);
+        var interval = setInterval(draw,framerate);
 
     </script>
 </body>
