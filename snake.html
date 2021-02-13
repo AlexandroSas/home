@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game in JS</title>
+    <title>Snake</title>
     <style>
         *{padding: 0; margin:0; text-align: center;}
         canvas{ background: #eee; display: block; margin: 30px auto;}
@@ -13,17 +13,17 @@
 <body>
     <h1>Bugged Snake</h1>
     <p>Hit the space bar to start! Enjoy :D</p>
-    <canvas id="cnvs" width="500" height="550px"></canvas>
+    <canvas id="cnvs" width="500px" height="550px"></canvas>
     <script>
         class Tale{
-            Tale(){
+            constructor(){
                 this.x;
                 this.y;
                 this.dx;
                 this.dy;
             };
         }
-        var framerate = 500;
+        var framerate = 350;
         var canvas = document.getElementById("cnvs");
         var ctx = canvas.getContext("2d");
 
@@ -128,9 +128,12 @@
                 score += 10;
 
                 // Update Framerate
-                framerate -= 10;
-                clearInterval(interval);
-                interval = setInterval(draw,framerate);
+                if(framerate > 100){
+                    framerate -= 10;
+                    clearInterval(interval);
+                    interval = setInterval(draw,framerate);
+                }
+
 
 
                 // Incrementing the size of the tales
@@ -141,25 +144,6 @@
                 t.dy = tales[0].dy;
                 tales.push(t);
             }
-            /* 
-            for(var i=0; i<brickColumnCount; i++){
-                for(var j=0; j<brickRowCount; j++){
-                    var b = bricks[i][j];
-                    if(b.status == 1){
-                        if(x + ballRadius > b.x && x - ballRadius < b.x + brickWidth && y + ballRadius > b.y && y - ballRadius< b.y + brickHeight){
-                            dy = -dy;
-                            b.status = 0;
-                            score++;
-                            if(score == brickRowCount*brickColumnCount){
-                                alert("YOU WIN!");
-                                document.location.reload();
-                                clearInterval(interval);
-                            }
-                        }
-                    }
-                }
-            }
-            */
         }
 
         // Loop Draw
