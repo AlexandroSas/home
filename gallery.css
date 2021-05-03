@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+body{
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: rgb(34, 34, 34);
+    color: white;
+}
+h1{
+    margin: 0 auto;
+    text-align: center;
+    padding: 0.85em;
+}
+footer{
+    display: flex;
+    padding: 10px;
+    width: max-content;
+    margin: 0 auto;
+}
+.social{
+    padding: 0px 1em;
+    width: 200px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+.social li a{
+    color: crimson;
+}
+
+header{
+    background-color: crimson;
+    border-radius: 8px;
+}
+header ul{
+    display: flex;
+    padding: 0.5em;
+}header ul li a{
+    width: 100%;
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    margin: 2px;
+    font-size: 1.1em;
+}header ul li a:hover{
+    color: rgb(34, 34, 34);   
+}
+
+/*
+.gallery > p{
+    height: calc(100vh - 200px);
+}
+*/
+
+.gallery{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    width: 100vw;
+}
+.left-side{
+    grid-template-columns: 70% auto;
+}.right-side{
+    grid-template-columns: auto 70%;
+}.vertical{
+    grid-template-columns: 30% 40% 30%;
+}.vertical > img{
+    height: 100%;
+}
+.box{
+    width: 80%;
+    display: grid;
+    align-items: center;
+    margin: 10px;
+    border-radius: 16px;
+    background-color: #fff;
+}.box > img{
+    object-fit: contain;
+    width: 100%;
+}.box > div{
+    justify-self: center;
+    color:rgb(34, 34, 34);
+    background-color: #fff;
+    border-radius: 16px;
+}.box > div > h4{
+    padding: 1em;
+}.box > div > p{
+    padding: 0.25em;
+    font-size: 0.9em;
+}.box > div > p > a{
+    color: crimson;
+}
+
+.list{
+    list-style: none;
+    padding: 0.5em 1em;
+}.list li {
+    font-size: 0.9em;
+}.list li a{
+    color: crimson;
+}
+
+
+@media screen and (max-width: 425px) {
+    header ul{
+        padding: 0.25em;
+    }
+    header ul li a{
+        font-size: 0.65em;
+    }
+    .box{
+        width:95vw;
+        margin: 5px auto;
+        padding: 0;
+    }
+    .left-side,.right-side,.vertical{
+        grid-template-columns: 1fr;
+    }
+    .box > div{
+        padding: 10px;
+    }
+}

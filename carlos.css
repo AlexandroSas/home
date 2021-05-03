@@ -29,6 +29,12 @@ h1{
     margin: 5px;
     justify-items: center;
     align-items: center;
+}.card ul li{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}.card ul li span{
+    padding: 10px;
 }
 img{
     height: calc(100vh - 100px);
