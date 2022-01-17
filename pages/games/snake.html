@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake</title>
+    <style>
+        *{padding: 0; margin:0; text-align: center;}
+        canvas{ background: #eee; display: block; margin: 30px auto;}
+        h1{color: #0095dd; padding: 10px; margin: 30px auto 0px auto;}
+    </style>
+</head>
+<body>
+    <h1>Bugged Snake</h1>
+    <p>Hit the space bar to start! Enjoy :D</p>
+    <canvas id="cnvs" width="500px" height="550px"></canvas>
+    <script>
+        class Tale{
+            constructor(){
+                this.x;
+                this.y;
+                this.dx;
+                this.dy;
+            };
+        }
+        var framerate = 350;
+        var canvas = document.getElementById("cnvs");
+        var ctx = canvas.getContext("2d");
+
+        // Canvas Sizes
+        var height = canvas.height - 50;
+
+        // Snake Variables
+        const radius = 5;
+        var tales = [];
+        var head = new Tale();
+        head.x = canvas.width/2;
+        head.y = height/2 + 40;
+        head.dx = 0;
+        head.dy = 0;
+        tales.push(head);
+
+        // Food Variables
+        var foodX = Math.floor(Math.random()*50)*10;
+        var foodY = Math.floor(Math.random()*50)*10 + 50;
+        const foodSize = 10;
+        
+        // Movement
+        var rightPressed = false;
+        var leftPressed = false;
+        var upPressed = false;
+        var downPressed = false;
+        
+        // Score
+        var score = 0;
+        var start = false;
+        var gameStarted = false;
+
+
+        document.addEventListener("keydown",keyDownHandler,false);
+        document.addEventListener("keyup",keyUpHandler,false);
+
+        // Functions
+        function drawTale(){
+            for(var i=0; i < tales.length; i++){
+                ctx.beginPath();
+                ctx.rect(tales[i].x,tales[i].y,radius*2,radius*2);
+                if(i==0)
+                    ctx.fillStyle = "#0095DD";
+                else
+                    ctx.fillStyle = "#33AADD";
+                ctx.fill();
+                ctx.rect(tales[i].x+1,tales[i].y+1,radius*2-2,radius*2-2);
+                ctx.fillStyle = "#000000";
+                ctx.fill("evenodd");
+                ctx.closePath();
+            }
+        }
+        function drawFood(){
+            ctx.beginPath();
+            ctx.rect(foodX, foodY, foodSize, foodSize);
+            ctx.fillStyle = "#22dd22";
+            ctx.fill();
+            ctx.closePath();
+        }
+        function drawScore(){ 
+            ctx.fillStyle = "black";           
+            ctx.fillRect(0,0,canvas.width,canvas.height-height);
+            ctx.fillStyle = "#22dd22";
+            ctx.font = "16px Arial";
+            ctx.fillText("Score: "+score,16,30);
+        }
+
+        function keyDownHandler(e){
+            if(e.keyCode == 32){
+                start = true;
+            }
+        }
+        function keyUpHandler(e){
+            if(e.key == "ArrowRight"){
+                rightPressed = true;
+                leftPressed = false;
+                upPressed = false;
+                downPressed = false;
+            } else if(e.key == "ArrowLeft"){
+                leftPressed = true;
+                rightPressed = false;
+                upPressed = false;
+                downPressed = false;
+            } else if(e.key == "ArrowUp"){
+                upPressed = true;
+                downPressed = false;
+                rightPressed = false;
+                leftPressed = false;
+            } else if(e.key == "ArrowDown"){
+                downPressed = true;
+                upPressed = false;
+                rightPressed = false;
+                leftPressed = false;
+            }
+        }
+
+        function collisionDetection(){
+            if(tales[0].x == foodX && tales[0].y == foodY){
+                // Change position of food
+                foodX = Math.floor(Math.random()*50)*10;
+                foodY = Math.floor(Math.random()*50)*10 + 50;
+                score += 10;
+
+                // Update Framerate
+                if(framerate > 100){
+                    framerate -= 10;
+                    clearInterval(interval);
+                    interval = setInterval(draw,framerate);
+                }
+
+
+
+                // Incrementing the size of the tales
+                var t = new Tale();
+                t.x = tales[0].x;
+                t.y = tales[0].y;
+                t.dx = tales[0].dx;
+                t.dy = tales[0].dy;
+                tales.push(t);
+            }
+        }
+
+        // Loop Draw
+        function draw(){
+            ctx.clearRect(0,0,canvas.width,canvas.height);          // clear the canvas
+            collisionDetection();
+            drawFood();
+            drawTale();
+            drawScore();
+            
+            // Starting Game
+            if(start && !gameStarted){
+                gameStarted = true;   
+                tales[0].dx = 10;   
+            }
+            // Key Event
+            if(rightPressed){
+                if(tales[0].dx < 0){
+                    rightPressed = false;
+                    leftPressed = true;
+                } else {
+                    tales[0].dx = 10;
+                    tales[0].dy = 0;
+                }
+                if(tales.length>1){
+                    for(var i=tales.length-1; i>0; i--){
+                        tales[i].x = tales[i-1].x;
+                        tales[i].y = tales[i-1].y;
+                        tales[i].dx = tales[i-1].dx;
+                        tales[i].dy = tales[i-1].dy;
+                    }
+                }
+            } else if(leftPressed){
+                if(tales[0].dx > 0){
+                    leftPressed = false;
+                    rightPressed = true;
+                } else {
+                    tales[0].dx = -10;
+                    tales[0].dy = 0;
+                }
+                if(tales.length>1){
+                    for(var i=tales.length-1; i>0; i--){
+                        tales[i].x = tales[i-1].x;
+                        tales[i].y = tales[i-1].y;
+                        tales[i].dx = tales[i-1].dx;
+                        tales[i].dy = tales[i-1].dy;
+                    }
+                }
+            } else if(upPressed){
+                if(tales[0].dy > 0){
+                    upPressed = false;
+                    downPressed = true;
+                } else {
+                    tales[0].dy = -10;
+                    tales[0].dx = 0;
+                }
+                if(tales.length>1){
+                    for(var i=tales.length-1; i>0; i--){
+                        tales[i].x = tales[i-1].x;
+                        tales[i].y = tales[i-1].y;
+                        tales[i].dx = tales[i-1].dx;
+                        tales[i].dy = tales[i-1].dy;
+                    }
+                }
+            } else if(downPressed){
+                if(tales[0].dy < 0){
+                    downPressed = false;
+                    upPressed = true;
+                } else {
+                    tales[0].dy = 10;
+                    tales[0].dx = 0;
+                }
+                if(tales.length>1){
+                    for(var i=tales.length-1; i>0; i--){
+                        tales[i].x = tales[i-1].x;
+                        tales[i].y = tales[i-1].y;
+                        tales[i].dx = tales[i-1].dx;
+                        tales[i].dy = tales[i-1].dy;
+                    }
+                }
+            }
+
+            // Collision Border
+            var x = tales[0].x;
+            var y = tales[0].y;
+            var dx = tales[0].dx;
+            var dy = tales[0].dy;
+            if(x + dx < 0){ tales[0].x = canvas.width; }
+            else if(x + dx >= canvas.width){ tales[0].x = -10; }
+            if(y + dy < canvas.height - height){ tales[0].y = canvas.height; }
+            else if(y + dy >= canvas.height){ tales[0].y = canvas.height - height -10; } 
+
+            // Collision with tales
+            if(tales.length > 4){
+                for(var i=4; i < tales.length; i++){
+                    if(tales[0].x == tales[i].x && tales[0].y == tales[i].y){
+                        alert("GAME OVER"); 
+                        document.location.reload(); 
+                        clearInterval(interval); 
+                    }
+                }
+            }
+
+            // Update Snake Movement
+            tales[0].x += tales[0].dx;
+            tales[0].y += tales[0].dy;
+
+        }
+        var interval = setInterval(draw,framerate);
+
+    </script>
+</body>
+</html>

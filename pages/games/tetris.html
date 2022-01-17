@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetris</title>
+    <style>
+        *{padding: 0; margin:0; text-align: center; box-sizing: border-box;}
+        canvas{ background: #1f1f1f; display: block; margin: 30px auto;}
+        h1{color: #0095dd; padding: 10px; margin: 30px auto 0px auto;}
+    </style>
+</head>
+<body>
+    <h1>Bugged Tetris</h1>
+    <p>Hit the space bar to start! Enjoy :D</p>
+    <canvas id="cnvs" width="200px" height="440px"></canvas>
+    <script>
+        const a = {
+            color: "#29003d",
+            bordercolor: "#1B0029",
+            parts: [ 1, 0, 1, 0, 1, 0, 1, 0 ],
+            height: 4
+        }
+        const b = {
+            color: "#37174f",
+            bordercolor: "#2c123f",
+            parts: [ 1, 0, 1, 1, 0, 1, 0, 0 ],
+            height: 3
+        }
+        const c = {
+            color: "#431c5e",
+            bordercolor: "#38174f",
+            parts: [ 0, 1, 1, 1, 1, 0, 0, 0 ],
+            height: 3
+        }
+        const d = {
+            color: "#5a7a00",
+            bordercolor: "#4b6600",
+            parts: [ 1, 0, 1, 0, 1, 0, 1, 1 ],
+            height: 4
+        }
+        const e = {
+            color: "#74970c",
+            bordercolor: "#66840b",
+            parts: [ 0, 1, 0, 1, 0, 1, 1, 1 ],
+            height: 4
+        }
+        const f = {
+            color: "#97bc10",
+            bordercolor: "#87a90f",
+            parts: [  1, 1, 1, 1, 0, 0, 0, 0 ],
+            height: 2
+        }
+        const g = {
+            color: "#6D6C37",
+            bordercolor: "#5f5e30",
+            parts: [ 1, 0, 1, 1, 1, 0, 0, 0 ],
+            height: 3
+        }
+        const pieces = [ a, b, c, d, e, f, g ]
+        const tetris = []
+
+        const min = 0
+        const max = 6
+
+        class Tetris{
+            constructor(){
+                this.shape = pieces[Math.floor(Math.random() * (max - min + 1)) + min]
+                this.x
+                this.y
+                this.dx
+                this.dy
+            }
+        }
+
+        var framerate = 250
+        var canvas = document.getElementById("cnvs")
+        var ctx = canvas.getContext("2d")
+
+        // Canvas Sizes
+        var height = canvas.height - 60
+
+        // Tetris Pieces Variables
+        const size = 20
+        var p = new Tetris()
+        p.x = canvas.width/2
+        p.y = size*4
+        p.dx = 0
+        p.dy = size
+        tetris.push(p)
+
+        
+        // Score
+        var score = 0
+        var start = false
+        var gameStarted = false
+
+
+        document.addEventListener("keydown",keyDownHandler,false)
+        document.addEventListener("keyup",keyUpHandler,false)
+
+        
+
+        // Functions
+        function drawTetris(){
+            tetris.forEach(piece => {
+                for(let i=0; i<4; i++){
+                    if(piece.shape.parts[i*2] == 1){
+                        ctx.beginPath()
+                        ctx.rect(piece.x, piece.y+size*i, size-2, size-2)
+                        ctx.fillStyle = piece.shape.color
+                        ctx.fill()
+                        ctx.lineWidth = 2
+                        ctx.strokeStyle = piece.shape.bordercolor
+                        ctx.stroke()
+                        ctx.closePath()
+                    }
+                    if (piece.shape.parts[i*2 + 1] == 1){
+                        ctx.beginPath()
+                        ctx.rect(piece.x+size, piece.y+size*i, size-2, size-2)
+                        ctx.fillStyle = piece.shape.color
+                        ctx.fill()
+                        ctx.lineWidth = 2
+                        ctx.strokeStyle = piece.shape.bordercolor
+                        ctx.stroke()
+                        ctx.closePath()
+                    }
+                }
+            })
+        }
+
+        function drawScore(){ 
+            ctx.fillStyle = "black"       
+            ctx.fillRect(0,0,canvas.width,canvas.height-height)
+            ctx.fillStyle = "#22dd22"
+            ctx.font = "16px Arial"
+            ctx.fillText("Score: "+score,16,30)
+        }
+
+        function keyDownHandler(e){
+            if(e.keyCode == 32){
+                start = true
+            }
+        }
+        function keyUpHandler(e){
+            if(e.key == "ArrowRight"){
+                tetris[tetris.length-1].x += size
+                if(tetris[tetris.length-1].x > size*8)
+                    tetris[tetris.length-1].x = size*8
+            } else if(e.key == "ArrowLeft"){
+                tetris[tetris.length-1].x -= size
+                if(tetris[tetris.length-1].x < 0)
+                    tetris[tetris.length-1].x = 0
+            } else if(e.key == "ArrowUp"){
+            } else if(e.key == "ArrowDown"){
+            }
+        }
+
+        function collisionDetection(){
+            // Collision Border
+            if(tetris[tetris.length-1].y + size*tetris[tetris.length-1].shape.height == canvas.height){
+                tetris[tetris.length-1].dy = 0
+                p = new Tetris()
+                p.x = canvas.width/2
+                p.y = size*4
+                p.dx = 0
+                p.dy = size
+                tetris.push(p)
+            }
+            
+            // Collision with pieces
+            tetris.forEach(piece => {
+
+            })
+
+
+            // Speed Up
+            /*
+            if(framerate > 100){
+                framerate -= 10;
+                clearInterval(interval);
+                interval = setInterval(draw,framerate);
+            }
+            */
+        }
+
+        // Loop Draw
+        function draw(){
+            if(!gameStarted){  
+                drawTetris()
+                drawScore()
+                // Starting Game
+                if(start){
+                    gameStarted = true
+                    counter = 0
+                }
+            } else {
+                counter++
+                ctx.clearRect(0,0,canvas.width,canvas.height)          // clear the canvas
+                collisionDetection()
+                drawTetris()
+                drawScore()
+
+                // Movement
+
+
+                // Rotation
+
+
+
+
+                // Update Piece Movement
+                if(counter%2 == 0){
+                    tetris[tetris.length-1].y += tetris[tetris.length-1].dy
+                }
+
+            }
+        }
+        var interval = setInterval(draw,framerate);
+
+    </script>
+</body>
+</html>
