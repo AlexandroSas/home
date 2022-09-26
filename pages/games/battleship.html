@@ -12,7 +12,7 @@
 </head>
 <body>
     <h1>Battleship</h1>
-    <p>Hit the space bar to start! Enjoy :D</p>
+    <p>Hit Enter to start! Enjoy :D</p>
     <canvas id="cnvs" width="570" height="625"></canvas>
     <script>
         const RATIO = 30;
@@ -179,6 +179,8 @@
                     countershoot = distance();
                     return 1;
                 }
+            } else if(e.keyCode == 13){
+                gamestatus=0;
             }
             return 0;
         }
@@ -201,76 +203,78 @@
             drawMenu();
             ship.draw();
 
-            if(x<RATIO || y<RATIO || x >=width-RATIO || y>=height-RATIO || (x == roundRatio(ship.x) && y == roundRatio(ship.y)) || isNaN(x) || isNaN(y)){ click = false; }
-            if(click){ drawActive(x,y); }
+            if(gamestatus != -1){
+                if(x<RATIO || y<RATIO || x >=width-RATIO || y>=height-RATIO || (x == roundRatio(ship.x) && y == roundRatio(ship.y)) || isNaN(x) || isNaN(y)){ click = false; }
+                if(click){ drawActive(x,y); }
 
-            // Updates 1s
-            if(!counter){                                      
-                counter = 20;
-                time++;
+                // Updates 1s
+                if(!counter){                                      
+                    counter = 20;
+                    time++;
+                    for(var i=0; i<enemies.length; i++){
+                        enemies[i].counterstay--;
+                        enemies[i].counterjump--;
+                    }
+                    if(countershoot != -1){ countershoot--; }
+                }
+
+                if(gamestatus == 1){
+                    alert("All enemies Killed: You've Win!");
+                    document.location.reload();
+                    clearInterval(interval);            
+                }
+
+                flag = false;
                 for(var i=0; i<enemies.length; i++){
-                    enemies[i].counterstay--;
-                    enemies[i].counterjump--;
-                }
-                if(countershoot != -1){ countershoot--; }
-            }
+                    if(enemies[i].alive){
+                        flag = true;
+                        if(enemies[i].counterjump > 0){
+                                if(counter%10){ enemies[i].draw(true); }
+                                else { enemies[i].draw(false); }
+                        }
+                    } else { enemies[i].draw(false); }
 
-            if(gamestatus == 1){
-                alert("All enemies Killed: You've Win!");
-                document.location.reload();
-                clearInterval(interval);            
-            }
-
-            flag = false;
-            for(var i=0; i<enemies.length; i++){
-                if(enemies[i].alive){
-                    flag = true;
-                    if(enemies[i].counterjump > 0){
-                            if(counter%10){ enemies[i].draw(true); }
-                            else { enemies[i].draw(false); }
-                    }
-                } else { enemies[i].draw(false); }
-
-                if(!enemies[i].counterstay){
-                    enemies[i].counterjump = enemies[i].jump;
-                    enemies[i].counterstay = enemies[i].stay;
-                    enemies[i].x += enemies[i].speedX;
-                    enemies[i].y += enemies[i].speedY;
-                }
-            }
-            if(!flag){ gamestatus = 1; }
-            
- 
-            flag2 = false;
-            if(countershoot > 0){ showShoot = "..."; console.log(countershoot);}
-            if(countershoot == 0){
-                countershoot = -1;
-                for(var i = 0; i<enemies.length; i++){
-                    if(enemies[i].x == targetX && enemies[i].y == targetY){ 
-                        flag2 = true;
-                        showShoot = "Hit!"; 
-                        enemies[i].speedX = 0;
-                        enemies[i].speedY = 0;
-                        enemies[i].alive = false;
+                    if(!enemies[i].counterstay){
+                        enemies[i].counterjump = enemies[i].jump;
+                        enemies[i].counterstay = enemies[i].stay;
+                        enemies[i].x += enemies[i].speedX;
+                        enemies[i].y += enemies[i].speedY;
                     }
                 }
-                if(!flag2){ showShoot = "Miss!"; }
-            }
+                if(!flag){ gamestatus = 1; }
+                
+    
+                flag2 = false;
+                if(countershoot > 0){ showShoot = "..."; console.log(countershoot);}
+                if(countershoot == 0){
+                    countershoot = -1;
+                    for(var i = 0; i<enemies.length; i++){
+                        if(enemies[i].x == targetX && enemies[i].y == targetY){ 
+                            flag2 = true;
+                            showShoot = "Hit!"; 
+                            enemies[i].speedX = 0;
+                            enemies[i].speedY = 0;
+                            enemies[i].alive = false;
+                        }
+                    }
+                    if(!flag2){ showShoot = "Miss!"; }
+                }
 
-            if(ship.bullets == 0 && flag && countershoot == -1){
-                alert("No more Ammo: You've Lost!");
-                document.location.reload();
-                clearInterval(interval);
-            }
-            for(var i=0; i<enemies.length; i++){
-                if(roundRatio(ship.x)/RATIO == enemies[i].x && roundRatio(ship.y)/RATIO == enemies[i].y){ 
-                    alert("Enemy reached You: You've Lost!");
+                if(ship.bullets == 0 && flag && countershoot == -1){
+                    alert("No more Ammo: You've Lost!");
                     document.location.reload();
                     clearInterval(interval);
                 }
-            }
+                for(var i=0; i<enemies.length; i++){
+                    if(roundRatio(ship.x)/RATIO == enemies[i].x && roundRatio(ship.y)/RATIO == enemies[i].y){ 
+                        alert("Enemy reached You: You've Lost!");
+                        document.location.reload();
+                        clearInterval(interval);
+                    }
+                }
 
-            counter--;
+                counter--;
+            }
         }
         var interval = setInterval(game,FRAMERATE);
     </script>
