@@ -99,6 +99,9 @@ a{
         background-attachment: fixed;
     }    
     .container{
+        height: 100vh;
+        display: grid;
+        align-items: center;
         float: none;
         margin-left: auto;
         margin-right: auto;
@@ -170,6 +173,9 @@ a{
         background-attachment: fixed;
     }    
     .container{
+        height: 100vh;
+        display: grid;
+        align-items: center;
         margin-left: auto;
         margin-right: auto;
         float: none;
