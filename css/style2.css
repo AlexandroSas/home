@@ -77,59 +77,59 @@ html{
     font-family:  'Tangerine', cursive;
 }
 .one{
-    background: url(../img/moto2.jpg) no-repeat center;
+    background: url(../../img/moto2.jpg) no-repeat center;
     background-size: cover;
 }
 .one:hover{
-    background: linear-gradient(rgba(0,0,0,0.6)10%,rgba(0,0,0,0.6) 100%),url(../img/moto2.jpg) no-repeat center;
+    background: linear-gradient(rgba(0,0,0,0.6)10%,rgba(0,0,0,0.6) 100%),url(../../img/moto2.jpg) no-repeat center;
     background-size: cover;
 }
 
 .two{
-    background: url(../img/moto5.jpg) no-repeat center;
+    background: url(../../img/moto5.jpg) no-repeat center;
     background-size: cover;
 }
 .two:hover{
-    background: linear-gradient(rgba(0,0,0,0.6)10%,rgba(0,0,0,0.6) 100%),url(../img/moto5.jpg) no-repeat center;
+    background: linear-gradient(rgba(0,0,0,0.6)10%,rgba(0,0,0,0.6) 100%),url(../../img/moto5.jpg) no-repeat center;
     background-size: cover;
 }
 
 .three{
-    background: url(../img/moto1.jpg) no-repeat center;
+    background: url(../../img/moto1.jpg) no-repeat center;
     background-size: cover;
 }
 .three:hover{
-    background: linear-gradient(rgba(0,0,0,0.6)10%,rgba(0,0,0,0.6) 100%),url(../img/moto1.jpg) no-repeat center;
+    background: linear-gradient(rgba(0,0,0,0.6)10%,rgba(0,0,0,0.6) 100%),url(../../img/moto1.jpg) no-repeat center;
     background-size: cover;
 }
 
 .four{
-    background: url(../img/moto3.jpg) no-repeat center;
+    background: url(../../img/moto3.jpg) no-repeat center;
     background-size: cover;
 }
 .four:hover{
-    background: linear-gradient(rgba(0,0,0,0.6)10%,rgba(0,0,0,0.6) 100%),url(../img/moto3.jpg) no-repeat center;
+    background: linear-gradient(rgba(0,0,0,0.6)10%,rgba(0,0,0,0.6) 100%),url(../../img/moto3.jpg) no-repeat center;
     background-size: cover;
 }
 
 .five{
-    background: url(../img/keylarge.jpg) no-repeat center;
+    background: url(../../img/keylarge.jpg) no-repeat center;
     background-size: cover;
     background-position-y:-45px; 
 }
 .five:hover{
-    background: linear-gradient(rgba(0,0,0,0.6)10%,rgba(0,0,0,0.6) 100%),url(../img/keylarge.jpg) no-repeat center;
+    background: linear-gradient(rgba(0,0,0,0.6)10%,rgba(0,0,0,0.6) 100%),url(../../img/keylarge.jpg) no-repeat center;
     background-size: cover;
     background-position-y:-45px; 
 }
 
 .six{
-    background: url(../img/closeup.jpg) no-repeat center;
+    background: url(../../img/closeup.jpg) no-repeat center;
     background-size: cover;
     background-position: top;
 }
 .six:hover{
-    background: linear-gradient(rgba(0,0,0,0.6)10%,rgba(0,0,0,0.6) 100%),url(../img/closeup.jpg) no-repeat center;
+    background: linear-gradient(rgba(0,0,0,0.6)10%,rgba(0,0,0,0.6) 100%),url(../../img/closeup.jpg) no-repeat center;
     background-size: cover;
     background-position: top;
 }
@@ -190,6 +190,7 @@ html{
         -ms-flex-wrap: wrap;
         -ms-flexbox-direction: column;
         -webkit-flex-flow: row wrap;
+        flex-wrap: wrap;
         flex-flow: row wrap;
         display: -webkit-box;
         display: flex;
