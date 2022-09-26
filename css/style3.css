@@ -4,7 +4,7 @@
     position: relative;
     height: 100vh;
     overflow: hidden;
-    background: linear-gradient(rgba(0,0,0,0.3) 5%,rgba(0,0,0,0.8) 80%,rgba(0,0,0, 0.3) 100%), url(../img/closeup.jpg) no-repeat center;
+    background: linear-gradient(rgba(0,0,0,0.3) 5%,rgba(0,0,0,0.8) 80%,rgba(0,0,0, 0.3) 100%), url(../../img/closeup.jpg) no-repeat center;
     background-size: cover;
     background-attachment: fixed;
     background-position-y: 0px;
