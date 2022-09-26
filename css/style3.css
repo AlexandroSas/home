@@ -4,7 +4,7 @@
     position: relative;
     height: 100vh;
     overflow: hidden;
-    background: linear-gradient(rgba(0,0,0,0.3) 5%,rgba(0,0,0,0.8) 80%,rgba(0,0,0, 0.3) 100%), url(https://alexandrosas.github.io/home/img/closeup.jpg) no-repeat center;
+    background: linear-gradient(rgba(0,0,0, 0.5)0%, rgba(0,0,0,0.5)100%), url(https://alexandrosas.github.io/home/img/closeup.jpg) no-repeat center;
     background-size: cover;
     background-attachment: fixed;
     background-position-y: 0px;
@@ -79,7 +79,7 @@ form .submit:hover{
 
 
 
-@media(max-width: 425px){
+@media(max-width: 520px){
 .contacts h1{
     margin-left: auto;
     margin-right: auto;
@@ -105,7 +105,7 @@ form .submit{
         padding: 0px;
     }
 .social2{
-        width: 80%;
+        width: 100%;
         margin: 0 auto;
         display: grid;
         grid-template-columns: auto auto auto auto auto;

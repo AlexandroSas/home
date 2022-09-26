@@ -11,7 +11,7 @@ body{
     position: relative;
     height: 100vh;
     overflow: hidden;
-    background: url(https://alexandrosas.github.io/home/img/homebg.jpg) no-repeat center;
+    background: linear-gradient(to right, rgba(0,0,0,0) 5%,rgba(0,0,0,0.1) 30%,rgba(0,0,0,0.5) 50%,rgba(0,0,0, 1) 80%), url(https://alexandrosas.github.io/home/img/homebg.jpg) no-repeat center;
     background-size: cover;
     background-attachment: fixed; /*Parallax effects*/
 }
@@ -115,7 +115,7 @@ a{
     }
     .container ul.links{
         list-style-type: none;
-        width: 70%;
+        width: 100%;
         padding: 10px 0px 0px 0px;
         margin-top: 5%;
         margin-bottom: 2%;
@@ -126,7 +126,7 @@ a{
         border: 2px solid white;
         border-radius: 3px;
         text-align: center;
-        width: 150px;
+        width: 95%;
         margin: 1%;
     
     }
@@ -186,7 +186,7 @@ a{
     }
     .container ul.links{
         list-style-type: none;
-        width: 70%;
+        width: 100%;
         padding: 10px 0px 0px 0px;
         margin-top: 5%;
         margin-bottom: 2%;
@@ -197,7 +197,7 @@ a{
         border: 2px solid white;
         border-radius: 3px;
         text-align: center;
-        width: 150px;
+        width: 95%;
         margin: 1%;
     
     }
