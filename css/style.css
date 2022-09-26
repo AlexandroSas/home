@@ -11,7 +11,7 @@ body{
     position: relative;
     height: 100vh;
     overflow: hidden;
-    background: url(../../img/homebg.jpg) no-repeat center;
+    background: url(https://alexandrosas.github.io/home/img/homebg.jpg) no-repeat center;
     background-size: cover;
     background-attachment: fixed; /*Parallax effects*/
 }
@@ -94,7 +94,7 @@ a{
 
 @media(max-width: 320px){
     .heroimage{
-        background: linear-gradient(rgba(0,0,0,0.3) 5%,rgba(0,0,0,0.8) 80%,rgba(0,0,0, 0.3) 100%), url(../../img/coldBack.jpg) no-repeat center;
+        background: linear-gradient(rgba(0,0,0,0.3) 5%,rgba(0,0,0,0.8) 80%,rgba(0,0,0, 0.3) 100%), url(https://alexandrosas.github.io/home/img/coldBack.jpg) no-repeat center;
         background-size: cover;
         background-attachment: fixed;
     }    
@@ -150,7 +150,7 @@ a{
     
     .container ul.social{
         display: grid;
-        grid-template-columns: auto auto auto auto;
+        grid-template-columns: auto auto auto auto auto;
         list-style-type: none;
         margin-top: 10%;
         margin-bottom: 10%;
@@ -165,7 +165,7 @@ a{
 }
 @media(min-width:321px) and (max-width: 425px){
     .heroimage{
-        background: linear-gradient(rgba(0,0,0,0.3) 5%,rgba(0,0,0,0.8) 80%,rgba(0,0,0, 0.3) 100%), url(../../img/keycut.jpg) no-repeat center;
+        background: linear-gradient(rgba(0,0,0,0.3) 5%,rgba(0,0,0,0.8) 80%,rgba(0,0,0, 0.3) 100%), url(https://alexandrosas.github.io/home/img/keycut.jpg) no-repeat center;
         background-size: cover;
         background-attachment: fixed;
     }    
@@ -221,7 +221,7 @@ a{
     
     .container ul.social{
         display: grid;
-        grid-template-columns: auto auto auto auto;
+        grid-template-columns: auto auto auto auto auto;
         list-style-type: none;
         margin-top: 10%;
         margin-bottom: 10%;
@@ -236,7 +236,7 @@ a{
 }
 @media(min-width:426px) and (max-width: 768px){
     .heroimage{
-        background: linear-gradient(rgba(0,0,0,0.3) 5%,rgba(0,0,0,0.8) 80%,rgba(0,0,0, 0.3) 100%), url(../../img/coldBack.jpg) no-repeat center;
+        background: linear-gradient(rgba(0,0,0,0.3) 5%,rgba(0,0,0,0.8) 80%,rgba(0,0,0, 0.3) 100%), url(https://alexandrosas.github.io/home/img/coldBack.jpg) no-repeat center;
         background-size: cover;
         background-attachment: fixed;
         background-position-y: -35px;
@@ -260,7 +260,7 @@ a{
     }
     .container ul.links{
         display: grid;
-        grid-template-columns: auto auto auto auto;
+        grid-template-columns: auto auto auto auto auto;
         list-style-type: none;
         padding: 10px 0px 0px 0px;
         margin-top: 5%;
@@ -295,7 +295,7 @@ a{
     
     .container ul.social{
         display: grid;
-        grid-template-columns: auto auto auto auto;
+        grid-template-columns: auto auto auto auto auto;
         list-style-type: none;
         margin-top: 5%;
         margin-bottom: 10%;
