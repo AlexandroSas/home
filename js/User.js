@@ -54,7 +54,7 @@ export class User {
 
         const img = document.createElement('img')
         img.className = 'size-[4em] rounded-full border-2 border-accent'
-        img.src = `/img/squidgame/${this.props.code}.jpeg` ?? '/img/squidgame/SQ002.jpeg'
+        img.src = `https://alexandrosas.github.io/home/img/squidgame/${this.props.code}.jpeg` ?? 'https://alexandrosas.github.io/home/img/squidgame/SQ002.jpeg'
         dom.appendChild(img)
 
         const div = document.createElement('div')
