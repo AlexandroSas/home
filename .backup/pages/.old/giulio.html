@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Alexandro Sas">
+    <title>Giulio Tizzoni - Home</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            color: #dedede;
+            overflow-x: hidden;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: 'Josefin Sans', sans-serif;
+            background: #121212;
+        }
+
+        /* INFO */
+        .info .home{
+            width: 100%;
+            height: 100vh;
+            padding: 1em;
+            background: linear-gradient(rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.9) 100%), url("img/carlos1e.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+            display: grid;
+            grid-template-rows: 40% auto auto;
+        }
+        .info .home div:nth-child(1){
+            align-self: flex-end;
+        } 
+        div:nth-child(3){
+            align-self: flex-end;
+            font-size: 0.8em;
+            padding-bottom: 1em;
+        } 
+        .info .home h1{
+            font-family: 'Tangerine', cursive;
+            font-size: 4em;
+            padding: 0.15em;
+            color: white; /*#003E1F;*/
+        }        
+        .info .home h3{
+            padding: 0.25em;
+            color: #D5F2E3;
+        }
+        .info .home p{
+            font-size: 1em;
+            padding: 0.25em;
+            color: white; /*#73BA9B;*/
+        }
+        .info .home p i{
+            color: #D5F2E3;
+        }
+
+        .info .aboutme{
+            height: 100vh;
+            padding: 1em;
+            background-color: #D5F2E3; /*#F6E8EA;*/
+        }
+        .info .aboutme h1{
+            text-align: center;
+            padding: 1em;
+            color: #22181C; /*#F13030;*/
+        }
+        .info .aboutme p{
+            padding: 0.5em;
+            padding-bottom:2em;
+            color: #22181C;
+        }
+
+        /* COURCES */
+        .cources{
+            height: 100vh;
+            display: grid;
+            grid-template-rows: max-content auto;
+        }
+        .cources h1{
+            padding: 1em;
+            padding-bottom: 0;
+            padding-top: 2em;
+            text-align: center;
+            color: white;
+            background-color: #071425;
+        }
+        .cources ul{
+            list-style-type: none;
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            overflow-x: auto;
+            background-color: #071425;
+            padding: 1em;
+            padding-top: 0;
+            align-items: center;
+        }
+        .cources ul li{
+            display: grid;
+            height: 85%;
+            background: #094958;
+            padding: 1em;
+            margin: 0 0.5em;
+            text-align: center;
+            width: 80vw;
+            border-radius: 16px;
+        }
+        .cources ul li h3{
+            padding: 0.25em;
+            color: #2ad9d9;
+        }
+        .cources ul li h6{
+            padding: 0.25em;
+            color: #b8faf4;
+        }
+        .cources ul li hr{
+            margin: 0.65em;
+            border: none;
+            border-bottom: 1px solid #2ad9d9;
+        }
+        .cources ul li p{
+            padding: 0.5em;
+            font-size: 14px;
+            text-align: left;
+            color: #e2ffff;
+        }
+
+        /* REVIEWS */
+        .reviews h1{
+            text-align: center;
+            padding: 1em;
+            padding-top: 2em;
+            color: white;
+        }
+        .reviews ul{
+            display: grid;   
+        }
+        .reviews ul li{
+            padding: 0.25em;
+            margin: 0.5em;
+            border-radius: 8px;
+            background-color: #f2e7d5; /* #F6E8EA; */
+        }
+        .reviews ul li div:nth-child(1){
+            display: grid;
+            grid-template-columns: 80% 20%;
+            padding: 0.5em;
+            align-items: center;
+        }
+        .reviews ul li div:nth-child(1) h3{
+            color: #F45B69;
+            font-size: 0.95em;
+        }
+        .reviews ul li div:nth-child(1) h2{
+            color: #F45B69;
+        }
+        .reviews ul li div:nth-child(1) p{
+            padding: 0.5em 0;
+            margin-top: 0.5em;
+            grid-column: 1/2;
+            color: #22181C;
+        }
+
+        .reviews ul li div:nth-child(2){
+            display: grid;
+            grid-template-columns: 80% 20%;
+            padding: 0.5em;
+            align-items: center;            
+        }
+        .reviews ul li div:nth-child(2) p{
+            font-family: 'Tangerine', cursive;
+            font-size: 1.5em;
+            display: block;
+            color: #22181C;
+            font-weight: bold;
+        }
+        .reviews ul li div:nth-child(2) p:last-child{
+            font-size: 0.8em;
+        }
+        .on{
+            color: #F45B69;
+        }
+
+
+        /* FOOTER */
+        .footer{
+            padding: 1.5em;
+        }
+        .footer p{
+            text-align: center;
+            font-size: 0.8em;
+        }
+        .footer p i{
+            font-size: 0.6em;
+            align-self: center;
+        }
+
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Marck+Script|Poiret+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Tangerine&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text&amp;display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/d172d3c412.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="info">
+        <div class="home">
+            <div>
+                <h1>Giulio Tizzoni</h1>
+                <h3>EOA // TUTOR</h3>                
+            </div>
+
+            <p>- Laureato in "Amministrazione e Controllo"<br>- Laureando Magistrale in Economia Aziendale<br>- Specializzato in Amministrazione, Bilancio e Sistemi di Controllo Introvi</p>
+
+            <div>
+                <p>Attualmente Residente in Aprilia (LT)</p>
+                <p>Giulio Tizzoni.</p> 
+                <p><i class="fa fa-whatsapp"> +39 345 326 8190</i></p>                
+            </div>
+        </div>
+
+        <div class="aboutme">
+            <h1>ABOUT ME</h1>
+            <P>
+                - Collaboratore di Professionisti tra cui un professore universitario, mio mentore, con i quali opero nell'ambito della consulenza aziendale, negli organismi di vigilanza ex d.lgs 231/2001 e nei collegi sindacali.<br><br>
+                - Laureando magistrale "Bilancio, Audit e Performance d'Impresa" presso la "Università degli studi Roma Tre".<br><br>
+                - Laureato triennale in "Amministrazione e Controllo" presso la "Università degli studi Roma Tre", Luglio 2020.<br><br>
+                - Impartisco ripetizioni private dal 2017 con grande entusiasmo e passione.
+                Prevalentemente ripetizioni universitarie nelle materie di:
+                Economia Politica, Macroeconomia, Microeconomia, Matematica, Economia Aziendale e Bilancio.
+                Grazie alle quali, ogni sessione, tantissimi ragazzi riescono a superare l'esame con ottimi risultati.
+            </P>            
+        </div>
+
+
+    </div>
+
+    <div class="cources">
+        <h1>I MIEI CORSI</h1>
+        <ul>
+            <li>
+                <div>
+                    <h3>• MACROECONOMIA •</h3>
+                    <h6>7 Lezioni | 10h 30'</h6>
+                    <hr>                    
+                </div>
+
+                <p>> Pil nominale, pil reale, indice dei prezzi al consumi, deflatore del pil, inflazione.</p>
+                <p>> Modello reddito spesa, moltiplicatore della spesa autonoma, componenti esogene ed endogene, Keynes, Risparmio.</p>
+                <p>> Mercato della moneta, offerta e domanda di moneta, Base monetaria (H), moltiplicatore monetario, operazioni dela banca centrale europea, tasso di interesse nominale e reale.</p>
+                <p>> Modello Is-Lm.</p>
+                <p>> Modello di Phillips, Nairu, tasso di disoccupazione naturale.</p>
+                <p>> Modello Is-Lm-Pc.</p>
+                <p>> Modello reddito spesa in economia aperta, Importazioni, Esportazioni, Cambi fissi, Cambi flessibili, modello Mundell Fleming.</p>
+            </li>
+            <li>
+                <div>
+                    <h3>• MICROECONOMIA •</h3>
+                    <h6>6 Lezioni | 7h</h6>
+                    <hr>                    
+                </div>
+
+                <p>> Domanda e offerta del consumatore.</p>
+                <p>> Ottimo del consumatore, Funzione di utilità, curve d'indifferenza, Vincolo di Bilancio e Grafici.</p>
+                <p>> Funzione di produzione, Minimo costo del produttore, Isoquanti e Isocosti.</p>
+                <p>> Curve dei costi di breve e di lungo periodo, costi fissi, costi variabili, costi marginali.</p>
+                <p>> Concorrenza perfetta, breve e lungo periodo.</p>
+                <p>> Monopolio, ricavi marginali, mark-up, discriminazioni di prezzo, perdita secca di monopolio.</p>
+                <p>> Oligopolio, Duopolio e Concorrenza monopolistica.</p>
+            </li>
+            <li>
+                <div>
+                    <h3>• ECONOMIA AZIENDALE •</h3>
+                    <h6>8 Lezioni | 10h 30'</h6>
+                    <hr>                    
+                </div>
+
+                <p>> Come e perchè contabilizzare le voci di stato patrimoniale e conto economico.</p>
+                <p>> Acquisti e vendite con Iva.</p>
+                <p>> Cambiali attive e passive.</p>
+                <p>> Prestito obbligazionario.</p>
+                <p>> Retribuzione del personale dipendente.</p>
+                <p>> Immobilizzazioni.</p>
+                <p>> Mutui passivi.</p>
+                <p>> Costituzione Spa.</p>
+                <p>> Chiusura dei conti e scritture di assestamento.</p>
+                <p>> Indicatori di bilancio, Roi, Roe, Ros, Autofinanziamento, Equilibrio Economico e BEP (break even point).</p>
+            </li>
+            <li>
+                <div>
+                    <h3>• ECONOMIA POLITICA •</h3>
+                    <h6>10 Lezioni | 11h 30'</h6>
+                    <hr>
+                </div>
+
+                <p></p>
+            </li>     
+            <li>
+                <div>
+                    <h3>• MATEMATICA •</h3>
+                    <h6>10 Lezioni | 20h</h6>
+                    <hr>                  
+                </div>
+
+                <p></p>
+            </li>
+        </ul>    
+    </div>
+    
+    <div class="reviews">
+        <h1>RECENSIONI DEI RAGAZZI</h1>
+        <ul>
+            <li>
+                <div>
+                    <h2>Matematica</h2>
+                    <h3>Voto: 29/30</h3>
+                    <p>Lezioni interessanti, insegnate capace e disponibile h24/7.</p>
+                </div>
+                <div>
+                    <p>Alexandro S.</p>
+                    <p><i class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star" style="color: #22181C"></i></p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <h2>Macroeconomia</h2>
+                    <h3>Voto: 22/30</h3>
+                    <p>Puzza.</p>
+                </div>
+                <div>
+                    <p>Maurizio F.</p>
+                    <p><i class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star" style="color: #22181C"></i><i class="fa fa-star" style="color: #22181C"></i><i class="fa fa-star" style="color: #22181C"></i></p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <h2>Macroeconomia</h2>
+                    <h3>Voto: 25/30</h3>
+                    <p>Bacini.</p>
+                </div>
+                <div>
+                    <p>Naima N.</p>
+                    <p><i class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star" style="color: #22181C"></i><i class="fa fa-star" style="color: #22181C"></i><i class="fa fa-star" style="color: #22181C"></i></p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <h2>Matematica</h2>
+                    <h3>Voto: 28/30</h3>
+                    <p>Lezioni chiare, concetti complessi spiegati in maniera precisa e semplice per rendere facile la comprensione a chiunque.</p>
+                </div>
+                <div>
+                    <p>Martina A.</p>
+                    <p><i class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star" style="color: #22181C"></i><i class="fa fa-star" style="color: #22181C"></i><i class="fa fa-star" style="color: #22181C"></i></p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <h2>Economia Politica</h2>
+                    <h3>Voto: 30/30</h3>
+                    <p>Esame passato con molta facilità grazie alle spiegazioni del Tiz. Molto professionale anche se alla mano.</p>
+                </div>
+                <div>
+                    <p>Francesca R.</p>
+                    <p><i class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star on"></i></p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        <p>Website made by <a href="https://alexandrosas.github.io/home">Alexandro Sas</a> <i class="fa fa-copyright"></i></p>      
+    </div>
+
+</body>
+</html>

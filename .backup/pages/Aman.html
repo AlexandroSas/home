@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>007 - Aman</title>
+        <link rel="stylesheet" href="../css/squidgame.css" />
+    </head>
+    <body>
+        <div id="cnt_user"></div>
+        <script type="module">
+            import {User} from "../js/User.js"
+
+            const div = document.getElementById("cnt_user")
+            const user = new User({username: "Aman", code: "SQ007", score: 56000})
+            user.rCard(div)
+
+        </script>
+    </body>
+</html>
